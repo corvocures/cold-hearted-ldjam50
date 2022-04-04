@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Kill_Zone.gd" type="Script" id=1]
+
+[node name="Kill_Zone" type="Area2D" groups=["killzone"]]
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 152, 216, 136, 216, 136, 200, -16, 200, -16, -16, 336, -16, 336, 200, 184, 200, 184, 216, 168, 216, 168, 232, 368, 232, 368, -48, -48, -48, -48, 232, 152, 232 )
+
+[connection signal="area_entered" from="." to="." method="_on_Kill_Zone_area_entered"]
